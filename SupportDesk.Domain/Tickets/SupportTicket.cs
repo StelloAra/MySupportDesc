@@ -87,5 +87,35 @@
         {
             return _comments;
         }
+
+        public static SupportTicket Rehydrate(
+           Guid id,
+           string title,
+           string description,
+           Customer customer,
+           TicketPriority priority,
+           TicketStatus status,
+           string? technician,
+           DateTime createdAt,
+           IEnumerable<Comment> comments)
+        {
+            var ticket = new SupportTicket(
+                title,
+                description,
+                customer,
+                priority);
+
+            ticket.Id = id;
+            ticket.Status = status;
+            ticket.Technician = technician;
+            ticket.CreatedAt = createdAt;
+
+            foreach (var comment in comments)
+            {
+                ticket.AddComment(comment);
+            }
+
+            return ticket;
+        }
     }
 }
