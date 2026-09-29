@@ -13,6 +13,12 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Pages\CustomersPage.xaml" />
+    <None Remove="Pages\DashboardPage.xaml" />
+    <None Remove="Pages\NewTicketPage.xaml" />
+    <None Remove="Pages\TicketsPage.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -43,6 +49,26 @@
   <ItemGroup>
     <ProjectReference Include="..\SupportDesk.Application\SupportDesk.Application.csproj" />
     <ProjectReference Include="..\SupportDesk.Infrastructure\SupportDesk.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\CustomersPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\NewTicketPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\TicketsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\DashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!--

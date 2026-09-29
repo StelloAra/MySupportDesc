@@ -13,10 +13,59 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid Padding="24">
-        <TextBlock
-        Text="SupportDesk"
-        FontSize="32"
-        FontWeight="SemiBold" />
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border
+        Grid.Column="0"
+        Padding="16">
+
+            <StackPanel Spacing="12">
+
+                <TextBlock
+                Text="SupportDesk"
+                FontSize="24"
+                FontWeight="SemiBold"
+                Margin="8,8,8,24" />
+
+                <Button
+                x:Name="DashboardButton"
+                Content="🏠  Dashboard"
+                HorizontalAlignment="Stretch"
+                Click="DashboardButton_Click"/>
+
+                <Button
+                Content="🎫  Tickets"
+                HorizontalAlignment="Stretch"
+                Click="TicketsButton_Click" />
+
+                <Button
+                Content="👥  Customers"
+                HorizontalAlignment="Stretch"
+                Click="CustomersButton_Click"/>
+
+                <Border
+                Height="1"
+                Margin="8,12"
+                Opacity="0.3" />
+
+                <Button
+                Content="➕  New Ticket"
+                HorizontalAlignment="Stretch"
+                Click="NewTicketButton_Click"/>
+
+            </StackPanel>
+        </Border>
+
+        <!-- Main content -->
+        <Frame
+             x:Name="ContentFrame"
+             Grid.Column="1"
+              Padding="32" />
+
     </Grid>
 </Window>

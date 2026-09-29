@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="SupportDesk.WinUI.Pages.TicketsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SupportDesk.WinUI.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Padding="8">
+        <StackPanel Spacing="24">
+
+            <TextBlock
+            Text="Tickets"
+            FontSize="32"
+            FontWeight="SemiBold" />
+
+            <Grid ColumnSpacing="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox
+                Grid.Column="0"
+                PlaceholderText="Search tickets..." />
+
+                <Button
+                    Grid.Column="1"
+                    Content="+ New Ticket"
+                    Padding="20,8"
+                    Click="NewTicketButton_Click" />
+
+            </Grid>
+
+            <ListView>
+                <ListViewItem>
+                    <StackPanel Spacing="4">
+                        <TextBlock
+                        Text="Printer doesn't work"
+                        FontSize="18"
+                        FontWeight="SemiBold" />
+                        <TextBlock
+                        Text="Acme AB • High • In Progress"
+                        Opacity="0.7" />
+                    </StackPanel>
+                </ListViewItem>
+
+                <ListViewItem>
+                    <StackPanel Spacing="4">
+                        <TextBlock
+                        Text="Login problem"
+                        FontSize="18"
+                        FontWeight="SemiBold" />
+                        <TextBlock
+                        Text="Anna Andersson • Normal • New"
+                        Opacity="0.7" />
+                    </StackPanel>
+                </ListViewItem>
+
+            </ListView>
+
+        </StackPanel>
+    </Grid>
+</Page>
