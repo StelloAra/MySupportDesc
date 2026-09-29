@@ -13,4 +13,15 @@ public class Comment
         Text = text;
         CreatedAt = DateTime.Now;
     }
+
+    public static Comment Rehydrate(
+    string text,
+    DateTime createdAt)
+    {
+        var comment = new Comment(text);
+
+        comment.CreatedAt = createdAt;
+
+        return comment;
+    }
 }
