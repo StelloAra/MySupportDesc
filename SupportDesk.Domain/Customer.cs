@@ -42,4 +42,15 @@ public class Customer
         Name = name;
         Email = email;
     }
+
+    public static Customer Rehydrate(
+    Guid id,
+    string name,
+    string email)
+    {
+        var customer = new Customer(name, email);
+        customer.Id = id;
+
+        return customer;
+    }
 }
