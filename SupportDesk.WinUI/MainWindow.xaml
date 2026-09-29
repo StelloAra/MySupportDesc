@@ -13,7 +13,10 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid>
-
+    <Grid Padding="24">
+        <TextBlock
+        Text="SupportDesk"
+        FontSize="32"
+        FontWeight="SemiBold" />
     </Grid>
 </Window>
