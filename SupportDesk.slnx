@@ -2,4 +2,8 @@
   <Project Path="SupportDesk.Application/SupportDesk.Application.csproj" Id="c4805c0c-3dff-4df9-88d9-9dfb7df7b18e" />
   <Project Path="SupportDesk.Domain/SupportDesk.Domain.csproj" />
   <Project Path="SupportDesk.Infrastructure/SupportDesk.Infrastructure.csproj" Id="8cf8b5d5-7e74-42e0-822f-d16fb18fd85d" />
+  <Project Path="SupportDesk.WinUI/SupportDesk.WinUI.csproj" Id="680350f2-6be1-438c-a4dc-b4bd13a64128">
+    <Platform Project="x64" />
+    <Deploy />
+  </Project>
 </Solution>

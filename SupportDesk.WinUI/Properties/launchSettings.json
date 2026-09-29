@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SupportDesk.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SupportDesk.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
