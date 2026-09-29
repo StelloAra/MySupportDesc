@@ -13,6 +13,7 @@ public partial class App : Microsoft.UI.Xaml.Application
     private readonly ICustomerRepository _customerRepository;
     private readonly ITicketRepository _ticketRepository;
     private readonly ITicketService _ticketService;
+    private readonly ICustomerService _customerService;
 
     public App()
     {
@@ -21,6 +22,9 @@ public partial class App : Microsoft.UI.Xaml.Application
 
         _customerRepository = new JsonCustomerRepository(
         _fileHandler);
+
+        _customerService = new CustomerService(
+        _customerRepository);
 
         _ticketRepository = new JsonTicketRepository(
         _fileHandler,
@@ -33,7 +37,7 @@ public partial class App : Microsoft.UI.Xaml.Application
 
     protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
     {
-        _window = new MainWindow();
+        _window = new MainWindow(_ticketService, _customerService);
         _window.Activate();
     }
 }
