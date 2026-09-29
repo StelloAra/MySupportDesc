@@ -15,8 +15,14 @@ public class JsonCustomerRepository : ICustomerRepository
 
     public async Task<List<Customer>> GetAllAsync()
     {
-        return await _fileHandler.ReadAsync<Customer>(
+        var data = await _fileHandler.ReadAsync<CustomerData>(
             DataPaths.CustomersFile);
+
+        return [.. data.Select(c =>
+            Customer.Rehydrate(
+                c.Id,
+                c.Name,
+                c.Email))];
     }
 
     public async Task<Customer?> GetByIdAsync(Guid id)
